@@ -7,7 +7,7 @@ Bem-vindo ao repositório do projeto Fatec Portas Abertas! Este projeto está se
 - Lembrando que tudo é feito na sua linha de comando favorita (cmd, powershell, bash, etc.) e você deve ter o Git instalado e configurado na sua máquina
 
 
-## Processo para mandar sua alteração no repositório
+### Processo para mandar sua alteração no repositório
 
 Clonar o repositório:
 
@@ -39,9 +39,9 @@ Obs.: Cuidado na hora alterar arquivos que não fazem parte da sua tarefa, pois 
 
 # Divisões de tarefas
 
-## Jogo da Forca
+### Jogo da Forca
 
-## Jogo da Velha
+### Jogo da Velha
 
-## Jogo de Xadrez
+### Jogo de Xadrez
 
