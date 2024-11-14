@@ -1,4 +1,4 @@
-package view;
+package projeto.view;
 
 public class JogoPrincipal {
 

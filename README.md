@@ -21,27 +21,47 @@ Adicionar as alterações para commit:
 
 Fazer o commit:
 
-<code>git commit -m "Mensagem" </code> (para ficar de melhor intepretação, depois vou passar uma convenção para as mensagens)
-
+<code>git commit -m "Mensagem" </code> 
 
 Dar push (passar as alterações do seu repositório do pc para o do Github):
 
 <code>git push origin main</code> 
+
+### Erro na hora de dar commit (Git não está reconhecendo o usuário que está fazendo a alteração)
+
+<code> git config --global user.name "nomeusuariogithub" </code>
+
+<code>git config --global user.email "emaildogithub@provedor"</code>
+
+<i>Nota: se estiver em um computador público de algum local e queira que essas credenciais não fiquem salvas nele (mesmo que o da Fatec por padrão os remova ao reiniciar/desligar o pc), após dar o git push, entre em "Gerenciador de Credenciais", vá para "Credenciais do Windows", procure a credencial genérica do github e clique em remover</i>
+
 
 
 ### Erro na hora de dar push (repositório local colidindo com o do sistema)
 
 <code>git pull origin main</code>
 
-
-Obs.: Cuidado na hora alterar arquivos que não fazem parte da sua tarefa, pois se não esse comando não funcionará (o arquivo x no repositório remoto é diferente do local)
-
+<i>Obs.: Cuidado na hora alterar arquivos que não fazem parte da sua tarefa, pois se não esse comando não funcionará (o arquivo x no repositório remoto é diferente do local)</i>
 
 # Divisões de tarefas
 
-### Jogo da Forca
+### [Jogo da Forca](./src/forca/)
 
-### Jogo da Velha
+@NicolasDomingos09, @Joaoftito e @Lia Fernandes 
 
-### Jogo de Xadrez
+### [Jogo da Velha](./src/jogovelha/)
+
+@DaianeTararam, @rafinhakenzo200 e @JM
+
+### [Jogo de Xadrez](./src/xadrez/)
+
+@GustavoPereira-Dev, @stormyy2, @GustavoCLacerd e @Carlos Augusto
+
+### [Jogo da Memória](./src/jogomemoria/)
+@Cauã Fernandes, @Stephani, @Paulo, @Rafael Silva
+
+<i>Nota: eu mantive uma pasta chamada "[Projeto](./src/projeto/)" dentro da src com a arquitetura MVC (Model, View, Controller), que é como a estrutura do projeto vai parecer mais ou menos depois de tudo estiver organizado, contudo para evitar problemas de colisões de arquivos e especialmente dúvidas para quem não conhece ainda isso, deixei ela avulsa (mas quem saber melhor da estrutura pode converter a pasta de seu jogo para o modelo MVC depois ou perguntar a mim ou outros no que consiste essa estrutura de 3 camadas)</i>
+
+Aliás, qualquer dúvida, estou aqui ou no grupo para sanar ela
+
 

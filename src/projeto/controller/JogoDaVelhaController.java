@@ -1,4 +1,4 @@
-package controller;
+package projeto.controller;
 
 public class JogoDaVelhaController {
 
