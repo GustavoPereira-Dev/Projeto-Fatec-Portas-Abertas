@@ -1,6 +1,6 @@
 package projeto.controller;
 
-//Obs.: Podem fazer as auterações que quiserem, ainda está incompleto
+//Obs.: Podem fazer as alterações que quiserem, ainda está incompleto
 
 import projeto.model.estrutura.JogoDaVelha;
 import java.util.Scanner;
