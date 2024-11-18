@@ -1,6 +1,6 @@
 package projeto.model.estrutura;
 
-//Obs.: Podem fazer as auterações que quiserem, ainda está incompleto
+//Obs.: Podem fazer as alterações que quiserem, ainda está incompleto
 
 public class JogoDaVelha {
     // Tabuleiro
