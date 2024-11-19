@@ -31,10 +31,24 @@ public class JogoDaVelhaController {
                 if (estrutura.verificarVencedor()) {
                     exibirTabuleiro();
                     System.out.println("Jogador " + estrutura.jogadorAtual + " venceu!");
+                    // Opção para reiniciar o jogo:
+                    // System.out.println("Deseja jogar novamente? (S/N)");
+                    // String resposta = scanner.next().toUpperCase();
+                    // if (!resposta.equals("S")) {
+                    //     System.out.println("Obrigado por jogar!");
+                    //     break;
+                    // }
                     break;
                 } else if (estrutura.verificarEmpate()) {
                     exibirTabuleiro();
                     System.out.println("Empate!");
+                    // Opção para reiniciar o jogo.
+                    // System.out.println("Deseja jogar novamente? (S/N)");
+                    // String resposta = scanner.next().toUpperCase();
+                    // if (!resposta.equals("S")) {
+                    //     System.out.println("Obrigado por jogar!");
+                    //     break;
+                    // }
                     break;
                 }
                 // Trocar o jogador
