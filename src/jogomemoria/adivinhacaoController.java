@@ -1,12 +1,12 @@
 package controller;
 
-import model.estrutura.adivinhacao;
+import model.estrutura.adivinhaca;
 
 public class adivinhacaoController
 {
     public void Jogar()
     {
-        adivinhacao adivinhacao = new adivinhacao();
+        adivinhaca adivinhacao = new adivinhaca();
 
         adivinhacao.jogar();
     }
