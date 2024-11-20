@@ -36,7 +36,6 @@ public class adivinhaca
         int chut = 105;
 
         nume = gerarNum(nume);
-        System.out.println(nume);
         chut = receberChute(chut);
 
         while(chut != num)
