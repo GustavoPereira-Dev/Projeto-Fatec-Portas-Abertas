@@ -31,9 +31,9 @@ public class JogoDaVelha {
     		    return true;
         }
         // Verificação das diagonais
-        if (tabuleiro[1][1] == jogadorAtual && tabuleiro[2][2] == jogadorAtual && tabuleiro[3][3] == jogadorAtual)
+        if (tabuleiro[0][0] == jogadorAtual && tabuleiro[1][1] == jogadorAtual && tabuleiro[2][2] == jogadorAtual)
             return true;
-        if (tabuleiro[1][3] == jogadorAtual && tabuleiro[2][2] == jogadorAtual && tabuleiro[3][1] == jogadorAtual)
+        if (tabuleiro[2][0] == jogadorAtual && tabuleiro[1][1] == jogadorAtual && tabuleiro[0][2] == jogadorAtual)
             return true;
         // Sem vencedores, retorna false
         return false;  

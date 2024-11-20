@@ -8,29 +8,16 @@ import java.util.Scanner;
 public class JogoDaVelhaController {
     private JogoDaVelha estrutura;
     private Scanner scanner;
-
+    
     public JogoDaVelhaController(JogoDaVelha estrutura) {
         this.estrutura = estrutura;
         this.scanner = new Scanner(System.in);
     }
 
-    public void iniciarJogo() {
-        int linha, coluna;
-        
+    public void iniciarJogo() {      
         while (true) {
             // Fazer a jogada
-            while (true){ //seria melhor criar um método novo no lugar pra validar??
-                //Exibir o tabuleiro
-                exibirTabuleiro();
-                //Inicio da jogada, será digitado linha, depois coluna
-                linha = obterEntrada("Vez do jogador '" + estrutura.jogadorAtual + "'\nDigite o número da linha (1, 2 ou 3): ") - 1;  
-                coluna = obterEntrada("Digite o número da coluna (1, 2 ou 3): ") - 1;
-
-                if (estrutura.fazerJogada(linha, coluna)){
-                    break; // Valida a jogada
-                }
-                System.out.println("\nJogada inválida, tente novamente");
-            }
+        	validarTabuleiro();
             
             if (estrutura.verificarVencedor()) {
                 exibirTabuleiro();
@@ -46,7 +33,7 @@ public class JogoDaVelhaController {
             } else if (estrutura.verificarEmpate()) {
                 exibirTabuleiro();
                 System.out.println("Empate!");
-                // Opção para reiniciar o jogo.
+                // Opção para reiniciar o jogo:
                 // System.out.println("Deseja jogar novamente? (S/N)");
                 // String resposta = scanner.next().toUpperCase();
                 // if (!resposta.equals("S")) {
@@ -77,7 +64,22 @@ public class JogoDaVelhaController {
             }
         }
     }
+    
+    private void validarTabuleiro() {
+    	int linha, coluna;
+    	while (true){
+            //Exibir o tabuleiro
+            exibirTabuleiro();
+            //Inicio da jogada, será digitado linha, depois coluna
+            linha = obterEntrada("Vez do jogador '" + estrutura.jogadorAtual + "'\nDigite o número da linha (1, 2 ou 3): ") - 1;  
+            coluna = obterEntrada("Digite o número da coluna (1, 2 ou 3): ") - 1;
 
+            if (estrutura.fazerJogada(linha, coluna)){
+                break; // Valida a jogada
+            }
+            System.out.println("\nJogada inválida, tente novamente");
+        }
+    }
     private int obterEntrada(String mensagem) {
         int entrada = 0;
         while (true) {
@@ -89,10 +91,11 @@ public class JogoDaVelhaController {
     		    } else {
     			    System.out.println("Entrada inválida, tente novamente.");
     		    }
-    	    } catch (Exception e) {
+    	    } catch (NumberFormatException e) {
     		    System.out.println("Entrada inválida, tente novamente.");
     	    }
         }
         return entrada;
     }
+
 }
