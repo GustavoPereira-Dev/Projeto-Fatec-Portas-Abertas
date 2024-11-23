@@ -55,9 +55,9 @@ Dar push (passar as alterações do seu repositório do pc para o do Github):
 
 ### [Quiz e Teste Vocacional](./src/xadrez/)
 
-@GustavoPereira-Dev, @stormyy2, @GustavoCLacerd, @Carlos Augusto @André Luiz
+@GustavoPereira-Dev, @stormyy2, @GustavoCLacerd, @Carlos Augusto, @André Luiz
 
-### [Jogo da Memória](./src/jogomemoria/)
+### [Jogo de Advinhação](./src/jogomemoria/)
 @Cauã Fernandes, @Stephani, @Paulo, @Rafael Silva
 
 ### Apresentação
