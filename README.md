@@ -53,12 +53,16 @@ Dar push (passar as alterações do seu repositório do pc para o do Github):
 
 @DaianeTararam, @rafinhakenzo200 e @JM
 
-### [Jogo de Xadrez](./src/xadrez/)
+### [Quiz e Teste Vocacional](./src/xadrez/)
 
-@GustavoPereira-Dev, @stormyy2, @GustavoCLacerd e @Carlos Augusto
+@GustavoPereira-Dev, @stormyy2, @GustavoCLacerd, @Carlos Augusto @André Luiz
 
 ### [Jogo da Memória](./src/jogomemoria/)
 @Cauã Fernandes, @Stephani, @Paulo, @Rafael Silva
+
+### Apresentação
+
+
 
 <i>Nota: eu mantive uma pasta chamada "[Projeto](./src/projeto/)" dentro da src com a arquitetura MVC (Model, View, Controller), que é como a estrutura do projeto vai parecer mais ou menos depois de tudo estiver organizado, contudo para evitar problemas de colisões de arquivos e especialmente dúvidas para quem não conhece ainda isso, deixei ela avulsa (mas quem saber melhor da estrutura pode converter a pasta de seu jogo para o modelo MVC depois ou perguntar a mim ou outros no que consiste essa estrutura de 3 camadas)</i>
 
