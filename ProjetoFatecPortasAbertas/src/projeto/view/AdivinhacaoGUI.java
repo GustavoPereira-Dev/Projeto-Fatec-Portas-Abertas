@@ -24,6 +24,7 @@ public class AdivinhacaoGUI extends JFrame {
         setTitle("Jogo de Adivinhação");
         setSize(449, 359);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
 
         JPanel panel = new JPanel();
         getContentPane().add(panel);

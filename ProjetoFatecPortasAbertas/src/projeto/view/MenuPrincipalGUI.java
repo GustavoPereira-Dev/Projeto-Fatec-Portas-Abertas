@@ -17,6 +17,7 @@ public class MenuPrincipalGUI extends JFrame {
         setTitle("Menu Principal");
         setSize(443, 317);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
 
         getContentPane().setBackground(Color.decode("#4d94ff"));
         JButton forcaButton = new JButton("Jogo da Forca");

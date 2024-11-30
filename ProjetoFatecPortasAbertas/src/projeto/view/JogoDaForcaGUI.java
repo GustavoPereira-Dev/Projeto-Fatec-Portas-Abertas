@@ -26,6 +26,7 @@ public class JogoDaForcaGUI extends JFrame {
         setTitle("Jogo da Forca");
         setSize(400, 350);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
 
         JPanel panel = new JPanel();
         getContentPane().add(panel);

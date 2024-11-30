@@ -24,6 +24,7 @@ public class JogoDaVelhaGUI extends JFrame {
         setSize(400, 450);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
+        setLocationRelativeTo(null);
 
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(3, 3));
