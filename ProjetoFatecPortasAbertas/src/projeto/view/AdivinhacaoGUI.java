@@ -30,18 +30,19 @@ public class AdivinhacaoGUI extends JFrame {
         panel.setLayout(null);
         panel.setBackground(Color.decode("#eeffcc"));
         JLabel titleLabel = new JLabel("Adivinhe o número de 0 a 100");
-        titleLabel.setBounds(119, 9, 143, 14);
+        titleLabel.setBounds(129, 26, 189, 14);
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         panel.add(titleLabel);
 
         inputChute = new JTextField();
-        inputChute.setBounds(93, 34, 200, 30);
+        inputChute.setBounds(118, 51, 200, 30);
         inputChute.setMaximumSize(new Dimension(200, 30));
         inputChute.setAlignmentX(Component.CENTER_ALIGNMENT);
+        
         panel.add(inputChute);
 
         JButton botaoChutar = new JButton("Chutar");
-        botaoChutar.setBounds(139, 75, 104, 23);
+        botaoChutar.setBounds(158, 173, 104, 23);
         botaoChutar.setAlignmentX(Component.CENTER_ALIGNMENT);
         botaoChutar.addActionListener(new ActionListener() {
             @Override
@@ -49,20 +50,23 @@ public class AdivinhacaoGUI extends JFrame {
                 verificarChute();
             }
         });
+        
+        botaoChutar.setBackground(Color.decode("#e6ffff"));
+        
         panel.add(botaoChutar);
 
         labelDica = new JLabel("Dica:");
-        labelDica.setBounds(116, 109, 160, 14);
+        labelDica.setBounds(158, 92, 160, 14);
         labelDica.setAlignmentX(Component.CENTER_ALIGNMENT);
         panel.add(labelDica);
 
         labelTentativas = new JLabel("Tentativas: 0");
-        labelTentativas.setBounds(158, 140, 104, 14);
+        labelTentativas.setBounds(158, 133, 104, 14);
         labelTentativas.setAlignmentX(Component.CENTER_ALIGNMENT);
         panel.add(labelTentativas);
 
         JButton botaoReiniciar = new JButton("Reiniciar Jogo");
-        botaoReiniciar.setBounds(119, 199, 174, 30);
+        botaoReiniciar.setBounds(128, 226, 174, 30);
         botaoReiniciar.setAlignmentX(Component.CENTER_ALIGNMENT);
         botaoReiniciar.addActionListener(new ActionListener() {
             @Override
@@ -70,10 +74,11 @@ public class AdivinhacaoGUI extends JFrame {
                 reiniciarJogo();
             }
         });
+        botaoReiniciar.setBackground(Color.decode("#ccffb3"));
         panel.add(botaoReiniciar);
         
         JButton voltarMenuButton = new JButton("Voltar ao Menu");
-        voltarMenuButton.setBounds(119, 257, 174, 30);
+        voltarMenuButton.setBounds(128, 279, 174, 30);
         voltarMenuButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         voltarMenuButton.addActionListener(new ActionListener() {
             @Override
@@ -83,6 +88,7 @@ public class AdivinhacaoGUI extends JFrame {
                 dispose();
             }
         });
+        voltarMenuButton.setBackground(Color.decode("#ccffcc"));
         
         
         panel.add(voltarMenuButton);

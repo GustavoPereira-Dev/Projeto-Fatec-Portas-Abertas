@@ -1,8 +1,9 @@
 package projeto.view;
 
-import javax.swing.*;
-
 import projeto.controller.JogoDaForca;
+
+import javax.swing.*;
+import javax.swing.border.Border;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -23,7 +24,7 @@ public class JogoDaForcaGUI extends JFrame {
 
     private void initUI() {
         setTitle("Jogo da Forca");
-        setSize(400, 300);
+        setSize(400, 350);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel();
@@ -32,7 +33,7 @@ public class JogoDaForcaGUI extends JFrame {
         panel.setBackground(Color.decode("#e6ffff"));
 
         JLabel titleLabel = new JLabel("Jogo da Forca FATEC Portas Abertas 2024");
-        titleLabel.setBounds(80, 11, 205, 14);
+        titleLabel.setBounds(80, 11, 240, 14);
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         panel.add(titleLabel);
 
@@ -72,10 +73,25 @@ public class JogoDaForcaGUI extends JFrame {
                 iniciarJogo();
             }
         });
+        novoJogoButton.setBackground(Color.decode("#80ffdf"));
         
         
         panel.add(novoJogoButton);
 
+        
+        JButton voltarMenuButton = new JButton("Voltar ao Menu");
+        voltarMenuButton.setBounds(112, 266, 152, 34);
+        voltarMenuButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        voltarMenuButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MenuPrincipalGUI menu = new MenuPrincipalGUI();
+                menu.setVisible(true);
+                dispose();
+            }
+        });
+        voltarMenuButton.setBackground(Color.decode("#b3e0ff"));
+        panel.add(voltarMenuButton);
         iniciarJogo();
     }
 
@@ -86,7 +102,7 @@ public class JogoDaForcaGUI extends JFrame {
 
     private void verificarPalpite() {
         String palpite = inputLetra.getText().toUpperCase();
-        if (!palpite.isEmpty()) {
+        if (!palpite.isEmpty() && palpite.length() == 1 && Character.isLetter(palpite.charAt(0))) {
             char letra = palpite.charAt(0);
             jogo.verificarPalpite(letra);
             inputLetra.setText("");
@@ -99,6 +115,9 @@ public class JogoDaForcaGUI extends JFrame {
                 JOptionPane.showMessageDialog(this, "Que pena! Você não conseguiu adivinhar a palavra: " + jogo.getPalavra());
                 iniciarJogo();
             }
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, insira uma única letra válida.", "Erro", JOptionPane.ERROR_MESSAGE);
+            inputLetra.setText("");
         }
     }
 

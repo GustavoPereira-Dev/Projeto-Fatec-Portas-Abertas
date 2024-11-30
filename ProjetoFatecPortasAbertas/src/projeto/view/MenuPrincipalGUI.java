@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 public class MenuPrincipalGUI extends JFrame {
 
     public MenuPrincipalGUI() {
+    	
         initUI();
     }
 
@@ -17,8 +18,9 @@ public class MenuPrincipalGUI extends JFrame {
         setSize(443, 317);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
+        getContentPane().setBackground(Color.decode("#4d94ff"));
         JButton forcaButton = new JButton("Jogo da Forca");
-        forcaButton.setBounds(24, 125, 192, 40);
+        forcaButton.setBounds(24, 139, 192, 40);
         forcaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -27,9 +29,10 @@ public class MenuPrincipalGUI extends JFrame {
                 dispose();
             }
         });
+        forcaButton.setBackground(Color.decode("#00ffcc"));
 
         JButton adivinhacaoButton = new JButton("Jogo de Adivinhação");
-        adivinhacaoButton.setBounds(113, 215, 192, 40);
+        adivinhacaoButton.setBounds(119, 209, 192, 40);
         adivinhacaoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -38,9 +41,10 @@ public class MenuPrincipalGUI extends JFrame {
                 dispose();
             }
         });
+        adivinhacaoButton.setBackground(Color.decode("#ffff99"));
 
         JButton velhaButton = new JButton("Jogo da Velha");
-        velhaButton.setBounds(226, 125, 192, 40);
+        velhaButton.setBounds(226, 139, 192, 40);
         velhaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -49,20 +53,22 @@ public class MenuPrincipalGUI extends JFrame {
                 dispose();
             }
         });
+        velhaButton.setBackground(Color.decode("#66ff66"));
         
         JButton testeButton = new JButton("Quiz");
-        testeButton.setBounds(24, 51, 192, 40);
+        testeButton.setBounds(24, 74, 192, 40);
         testeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	QuizTecnologia testeButtonGUI = new QuizTecnologia();
+            	QuizTecnologiaGUI testeButtonGUI = new QuizTecnologiaGUI();
             	testeButtonGUI.setVisible(true);
                 dispose();
             }
         });
+        testeButton.setBackground(Color.decode("#33ccff"));
         
         JButton questionarioButton = new JButton("Questionario");
-        questionarioButton.setBounds(226, 51, 192, 40);
+        questionarioButton.setBounds(226, 74, 192, 40);
         questionarioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -71,10 +77,11 @@ public class MenuPrincipalGUI extends JFrame {
                 dispose();
             }
         });
+        questionarioButton.setBackground(Color.decode("#ccccff"));
         getContentPane().setLayout(null);
 
         JLabel titleLabel = new JLabel("Selecione um jogo", SwingConstants.CENTER);
-        titleLabel.setBounds(0, 0, 192, 40);
+        titleLabel.setBounds(119, 11, 192, 40);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
         
         

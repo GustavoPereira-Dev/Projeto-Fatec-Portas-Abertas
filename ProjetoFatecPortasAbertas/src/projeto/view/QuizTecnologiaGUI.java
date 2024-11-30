@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 @SuppressWarnings("serial")
-public class QuizTecnologia extends JFrame {
+public class QuizTecnologiaGUI extends JFrame {
     private int numeroPergunta = 0;
     private int pontosProgramacao = 0;
     private int pontosDesign = 0;
@@ -20,7 +20,7 @@ public class QuizTecnologia extends JFrame {
     private CardLayout cardLayout;
     private JPanel painelCards;
 
-    public QuizTecnologia() {
+    public QuizTecnologiaGUI() {
         setTitle("Quiz de Tecnologia");
         setSize(800, 450);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -293,6 +293,25 @@ public class QuizTecnologia extends JFrame {
     painelResultado.repaint();
     
     cardLayout.show(painelCards, "Resultado");
+    
+    JButton voltarMenuButton = new JButton("Voltar ao Menu");
+    voltarMenuButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+    voltarMenuButton.setFont(new Font("SansSerif", Font.BOLD, 14));
+    voltarMenuButton.setBackground(Color.RED);
+    voltarMenuButton.setForeground(Color.WHITE);
+    voltarMenuButton.setFocusPainted(false);
+    voltarMenuButton.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+    voltarMenuButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            MenuPrincipalGUI menu = new MenuPrincipalGUI();
+            menu.setVisible(true);
+            dispose();
+        }
+    });
+
+    painelResultado.add(Box.createRigidArea(new Dimension(0, 10)));
+    painelResultado.add(voltarMenuButton);
 }
 
 

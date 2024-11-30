@@ -6,13 +6,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import projeto.controller.QuestionarioController;
-import projeto.model.estrutura.Questionario;
+import projeto.model.estrutura.Questao;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
-@SuppressWarnings("serial")
 public class QuestionarioGUI extends JFrame {
     private int numeroPergunta = 0;
     private QuestionarioController controle;
@@ -57,19 +52,19 @@ public class QuestionarioGUI extends JFrame {
         painelPergunta.removeAll();
         painelPergunta.setLayout(new BoxLayout(painelPergunta, BoxLayout.Y_AXIS));
 
-        JLabel perguntaLabel = new JLabel((numeroPergunta + 1) + ". " + pergunta);
+        JLabel perguntaLabel = new JLabel("<html><body style='width: 550px;'>" + pergunta + "</body></html>");
         perguntaLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         perguntaLabel.setFont(new Font("SansSerif", Font.BOLD, 16));
+        //("<html><body style='width: 200px;'>Este é um exemplo de JLabel que contém texto longo e que será quebrado em várias linhas se ultrapassar a largura permitida.</body></html>"
         painelPergunta.add(Box.createRigidArea(new Dimension(0, 20)));
         painelPergunta.add(perguntaLabel);
 
         JPanel opcoesPanel = new JPanel(new GridLayout(0, 1, 10, 10));
         opcoesPanel.setBackground(new Color(240, 248, 255));
 
-        List<String> letras = Arrays.asList("a", "b", "c", "d", "e");
         botoesAlternativas = new JButton[opcoes.length];
         for (int i = 0; i < opcoes.length; i++) {
-            JButton opcao = new JButton("<html><div style='text-align: center;'>" + letras.get(i) + ") " + opcoes[i] + "</div></html>");
+            JButton opcao = new JButton("<html><div style='text-align: center;'>" + opcoes[i] + "</div></html>");
             opcao.setFont(new Font("SansSerif", Font.PLAIN, 14));
             opcao.setBackground(Color.WHITE);
             opcao.setFocusPainted(false);
@@ -135,10 +130,8 @@ public class QuestionarioGUI extends JFrame {
 
     private void exibirPergunta() {
         if (controle.temProximaQuestao()) {
-            Questionario questao = controle.getQuestaoAtual();
-            List<String> alternativasEmbaralhadas = Arrays.asList(questao.getAlternativas());
-            Collections.shuffle(alternativasEmbaralhadas);
-            criarPergunta(questao.getPergunta(), alternativasEmbaralhadas.toArray(new String[0]));
+            Questao questao = controle.getQuestaoAtual();
+            criarPergunta(questao.getPergunta(), questao.getAlternativas());
             cardLayout.show(painelCards, "Pergunta");
         } else {
             mostrarResultado();
@@ -177,10 +170,27 @@ public class QuestionarioGUI extends JFrame {
                 cardLayout.show(painelCards, "Pergunta");
             }
         });
+        
+        JButton voltarMenuButton = new JButton("Voltar ao Menu");
+        voltarMenuButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        voltarMenuButton.setFont(new Font("SansSerif", Font.BOLD, 14));
+        voltarMenuButton.setBackground(Color.RED);
+        voltarMenuButton.setForeground(Color.WHITE);
+        voltarMenuButton.setFocusPainted(false);
+        voltarMenuButton.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        voltarMenuButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MenuPrincipalGUI menu = new MenuPrincipalGUI();
+                menu.setVisible(true);
+                dispose();
+            }
+        });
 
         painelResultado.add(Box.createRigidArea(new Dimension(0, 20)));
         painelResultado.add(refazerButton);
-
+        painelResultado.add(voltarMenuButton);
+        
         painelResultado.revalidate();
         painelResultado.repaint();
 
@@ -189,7 +199,7 @@ public class QuestionarioGUI extends JFrame {
 
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
-            QuizTecnologia ex = new QuizTecnologia();
+            QuizTecnologiaGUI ex = new QuizTecnologiaGUI();
             ex.setVisible(true);
         });
     }

@@ -27,6 +27,7 @@ public class JogoDaVelhaGUI extends JFrame {
 
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(3, 3));
+        
 
         botoes = new JButton[3][3];
 
@@ -34,6 +35,7 @@ public class JogoDaVelhaGUI extends JFrame {
             for (int j = 0; j < 3; j++) {
                 botoes[i][j] = new JButton(" ");
                 botoes[i][j].setFont(new Font("Arial", Font.PLAIN, 60));
+                botoes[i][j].setBackground(Color.decode("#ddff99"));
                 final int linha = i;
                 final int coluna = j;
                 botoes[i][j].addActionListener(new ActionListener() {
@@ -71,10 +73,28 @@ public class JogoDaVelhaGUI extends JFrame {
                 statusLabel.setText("Vez do jogador: " + controle.getJogadorAtual());
             }
         });
+        reiniciarButton.setBackground(Color.decode("#fff5cc"));
+
+        JButton voltarMenuButton = new JButton("Voltar ao Menu");
+        voltarMenuButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MenuPrincipalGUI menu = new MenuPrincipalGUI();
+                menu.setVisible(true);
+                dispose();
+            }
+        });
+        voltarMenuButton.setBackground(Color.decode("#ffe6cc"));
+
+        JPanel bottomPanel = new JPanel();
+        bottomPanel.setLayout(new GridLayout(1, 2));
+        bottomPanel.add(reiniciarButton);
+        bottomPanel.add(voltarMenuButton);
 
         add(statusLabel, BorderLayout.NORTH);
         add(panel, BorderLayout.CENTER);
-        add(reiniciarButton, BorderLayout.SOUTH);
+        add(bottomPanel, BorderLayout.SOUTH);
+
     }
 
     private void atualizarTabuleiro() {
